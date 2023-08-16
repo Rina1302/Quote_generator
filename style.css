@@ -41,7 +41,7 @@ body {
     border-radius: 3px;
     background-color: rgba(23, 124, 229);
     position: absolute;
-    bottom: -10px;
+    bottom: -20px;
     left: 50%;
     transform: translate(-50%);
 
@@ -60,4 +60,53 @@ body {
 }
 
 
-.quote-box span {}
+.quote-box span {
+    display: block;
+    margin-top: 10px;
+    float: right;
+    position: relative;
+}
+
+.quote-box span::before {
+    content: '';
+    width: 15px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: -32px;
+    background: rgba(23, 124, 229);
+}
+
+.quote-box div {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.quote-box button {
+    background: rgba(23, 124, 229);
+    color: white;
+    border-radius: 25px;
+    border: 1px solid rgba(23, 124, 229);
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+
+}
+
+.quote-box button img {
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+}
+
+.quote-box button:nth-child(2) {
+    background: transparent;
+    color: #333;
+}

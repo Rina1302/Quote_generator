@@ -11,9 +11,32 @@
 <body>
     <div class="quote-box">
         <h2> Quote of the day</h2>
-        <blockquote>loading...</blockquote>
-        <span>loading...</span>
+        <blockquote id="quote">loading...</blockquote>
+        <span id="author">loading...</span>
+        <div>
+            <button onclick="getquote(api_url);">New Quote</button>
+            <button onclick="tweet()"><img src="x1.png" alt="">Tweet</button>
+        </div>
     </div>
+    <script>
+        const api_url = "https://api.quotable.io/random";
+        const quote = document.getElementById("quote");
+        const author = document.getElementById("author");
+        async function getquote(url) {
+            const response = await fetch(url)
+            var data = await response.json();
+
+            quote.innerHTML = data.content;
+            author.innerHTML = data.author;
+
+        }
+        getquote(api_url);
+
+        function tweet() {
+            window.open(href = "https://twitter.com/intent/tweet?text= " + quote.innerHTML + "  " + "'" + author.innerHTML + "'", "Tweet Window", "width=600 , height=300");
+        }
+
+    </script>
 </body>
 
 </html>
